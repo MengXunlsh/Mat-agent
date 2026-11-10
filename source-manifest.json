@@ -23,26 +23,26 @@
     {
       "file": "README.md",
       "source": "README.md",
-      "sha256": "89a713ccf90ac546f621f063d5d0010fc40ef59a14cb021b73d5f3544296ae7c",
-      "bytes": 2765
+      "sha256": "eb47f5a28cce1d43ddbd07b25d650629fd55de9bbe2f359e04638b93aeacfcd0",
+      "bytes": 3273
     },
     {
       "file": "README.zh-CN.md",
       "source": "README.zh-CN.md",
-      "sha256": "1f8f9f752f381819eaa39d100a3599d64b62e96b032ecec4bd6f2bae3d2ab9d3",
-      "bytes": 2564
+      "sha256": "54e775aaecf68aba02818ab5525ce094de041b2be0521af40e9e5d80cdb4ea71",
+      "bytes": 2971
     },
     {
       "file": "docs/usage-guide.md",
       "source": "docs/usage-guide.md",
-      "sha256": "7480a2637bd662ce5c05ccfdc2a053e53bf215b3da86f0a2cb144dbe4c613b17",
-      "bytes": 14865
+      "sha256": "4ba8652d76857b0cb22b51b8ea14b6f80655950d144c215db28519c8c10ac1f4",
+      "bytes": 15586
     },
     {
       "file": "docs/usage-guide.zh-CN.md",
       "source": "docs/usage-guide.zh-CN.md",
-      "sha256": "d20606a4a8cd450f1e53fb97d4b326248c9413dbf660224673255a3875848357",
-      "bytes": 14483
+      "sha256": "7dbe6040662d1328746db458ffde4611f6b1992aaa32cfdaecc9fc69a2333879",
+      "bytes": 15083
     },
     {
       "file": "examples/general-research/README.md",

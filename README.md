@@ -34,7 +34,12 @@ The workbench opens in Chrome or Edge. It listens locally on port 8790 by defaul
 | Computation | Connect user-operated SSH/Slurm or compatible HTTP resources for Quantum ESPRESSO workflows. |
 | Project records | Group artifacts, reference saved versions, and review or restore changes through Git. |
 
-Model and compute connections are configured by the user. Research files stay in the selected project directories. Application state is created under `runtime/` at launch. An optional compatible nanozyme dataset and material-space registry can be connected in **Settings → Tools & compute → Nanozyme data**.
+Model and compute connections are configured by the user. Research files stay in the selected project directories. Application state is created under `runtime/` at launch.
+
+## Data sources
+
+- **Your research files.** Add CSV, TSV or Excel tables, documents and structure files to a local project and grant the agent access. For example, you can analyse a solar-cell measurement table or inspect a battery material's CIF using the relevant tools. The exact input format depends on the tool.
+- **Optional nanozyme dataset.** The built-in structured dataset browser uses a compatible nanozyme registry and, optionally, its matching material-space resource. For data in other databases, export the relevant records to a project file. The current release has no built-in general SQL or external materials database connector.
 
 See the [usage guide](docs/usage-guide.md), [synthetic research examples](examples/general-research/README.md) and [Harness integration](integrations/deepseek-harness/README.md).
 

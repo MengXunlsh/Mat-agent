@@ -89,7 +89,15 @@ Initial-rate fitting requires concentration/rate columns and units; select a wor
 
 Plots use white backgrounds, consistent categorical colours, mathematical labels/units, SVG and high-resolution PNG. Opening a preview reads saved results rather than rerunning fits or calculations.
 
-## Database and evidence
+## Data sources and evidence
+
+### Project files
+
+Use **Project panel → Files** to locate local research files, then grant the agent access under **Permissions**. Built-in tools accept CSV, TSV or XLSX for analyses such as calibration, supported structure formats such as CIF or XYZ for structure inspection, and PDF or DOCX for document reading. Select a tool based on the file type and the task. You can export records from another database to a table and use them in the same way.
+
+### Optional structured nanozyme dataset
+
+This connector expects the nanozyme data layout and registry. The current release has no built-in direct connector for arbitrary SQLite or PostgreSQL databases or external materials databases.
 
 Connect a compatible local `database_registry.json` under **Settings → Tools & compute → Nanozyme data**. The `HIGHZYME_DATASET_REGISTRY` environment variable is also supported. Project data browsing becomes available after a successful connection.
 
@@ -98,6 +106,8 @@ Dataset tools cover catalogs, filtering, material–version–assay details, ind
 Connect a compatible material-space registry in the same settings or set `HIGHZYME_MATERIAL_SPACE_REGISTRY`. Two-dimensional coordinates support visualization. Similarity queries use the registered descriptors.
 
 The reader reuses verified data and recent query matches; pagination changes only the slice. Versions and the five asset hashes must match. Data stays read-only; selected evidence and analyses are written to user projects.
+
+### Literature evidence
 
 Literature evidence uses `highzyme.evidence.v1`. `highzyme_evidence_save` saves structurally checked drafts, and `highzyme_compare_evidence` compares 2–12 selected assays, retaining units, multiple values, missing context and conflicts. A database snapshot is distinct from rereading the publication; artifacts preserve the actual source scope.
 
