@@ -1,0 +1,16 @@
+---
+name: initial-rate-kinetics
+description: Fit substrate concentration versus measured initial rate to the Michaelis-Menten model, with explicit columns and units, reproducible outputs and a fitted curve.
+---
+
+Use this skill when initial rates have already been obtained. Time-versus-absorbance data requires a separate rate-extraction task and must not be passed directly to this fit.
+
+1. Select the authorized CSV, TSV or XLSX file. Use `highzyme_inspect_table` to inspect column names, a bounded preview and, for XLSX, sheet names. Choose columns from clear headers or the user's specification. Ask with the native question tool if the mapping, units or experimental series is ambiguous. Multiple sheets require an explicit sheet selection.
+2. Establish concentration and rate units. The fit preserves input units: Km has the concentration unit and Vmax the initial-rate unit. No implicit unit conversion, background subtraction or averaging is performed. Do not mix materials, catalyst doses, pH, temperatures, substrates or batches in one fit. Use `group_columns` for distinct material/condition/batch combinations and `context_columns` for supplied conditions that must remain constant within each group. All groups use the explicitly supplied units; normalize mixed units in a documented derived table first. Up to 12 groups are fitted independently; prepare a subset when more are present.
+3. Call `highzyme_fit_kinetics` with the file, concentration and rate columns, explicit units and requested report language. Use the optional sigma column only for known rate standard deviations; never substitute replicate counts or standard errors without an explicit conversion. Repeated concentrations remain individual observations. The tool performs positive-parameter nonlinear least squares on the original data, with no fitted intercept or reciprocal linearization.
+4. Inspect the returned parameters, residual metrics and concrete fit warnings. The tool saves data, JSON results, a Markdown report, PNG/SVG plots and a self-contained reproduction script. Grouped fits also save a parameter CSV. Choose `plot_layout: "overlay"` for shared axes or `"panels"` for separate plots. Use the native image viewer to inspect the actual exported plot if available. Register additional requested outputs with the existing artifact tool rather than copying them.
+5. Explain the fitted Km and Vmax in their stated units. Treat them as apparent parameters under the supplied assay conditions. A successful fit or high R-squared alone does not establish a catalytic mechanism, validate the material, or rank different assays.
+
+Use artifact_id for a revision and retain changes through project Git. Different input files or column/group selections receive separate analyses by default. Use new_analysis=true for an independent analysis with the same inputs. The output directory belongs to the current conversation or case. Do not use external computation for this local fit or add a candidate-generation stage.
+
+For changes to curve layout or labels only, call `highzyme_replot_kinetics` on the saved `-result.json`. This uses the existing parameters without refitting, updates the original artifact bundle, and saves graphics plus plotting options. Fit revisions use the fit tool and the original source data.

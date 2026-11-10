@@ -1,0 +1,11 @@
+{
+  "name": "mat-agent-harness-web-runtime",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.1-rc.2",
+    "@modelcontextprotocol/server-memory": "2026.7.4",
+    "3dmol": "2.5.5",
+    "echarts": "6.1.0"
+  }
+}

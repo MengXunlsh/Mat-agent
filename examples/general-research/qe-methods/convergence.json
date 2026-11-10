@@ -1,0 +1,30 @@
+{
+  "method": "convergence",
+  "purpose": "small-execution-example",
+  "models": [
+    {
+      "id": "silicon",
+      "structure_file": "inputs/silicon.extxyz"
+    }
+  ],
+  "pseudopotentials": {
+    "Si": "inputs/si.upf"
+  },
+  "parameters": {
+    "calculation": "scf",
+    "ecutwfc": 30,
+    "kpoints": [
+      1,
+      1,
+      1
+    ]
+  },
+  "convergence": {
+    "parameter": "ecutwfc",
+    "values": [
+      20,
+      30
+    ],
+    "tolerance_eV_atom": 0.01
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <title>mat-agent crystal unit cell</title>
+  <path d="M32 7 54 20 54 45 32 58 10 45 10 20Z" fill="#EFF6FF"/>
+  <path d="M32 7 54 20 32 33 10 20Z" fill="#BFDBFE"/>
+  <path d="M32 33 54 20 54 45 32 58Z" fill="#DBEAFE"/>
+  <path d="M32 7 54 20V45L32 58 10 45V20Z M10 20 32 33 54 20 M32 33V58"
+        stroke="#1D4ED8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#2563EB">
+    <circle cx="32" cy="7" r="4.3"/>
+    <circle cx="54" cy="20" r="4.3"/>
+    <circle cx="10" cy="20" r="4.3"/>
+    <circle cx="54" cy="45" r="4.3"/>
+    <circle cx="10" cy="45" r="4.3"/>
+    <circle cx="32" cy="58" r="4.3"/>
+  </g>
+  <circle cx="32" cy="33" r="5.5" fill="#60A5FA" stroke="#1D4ED8" stroke-width="2.4"/>
+</svg>

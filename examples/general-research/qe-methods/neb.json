@@ -1,0 +1,74 @@
+{
+  "method": "neb",
+  "purpose": "small-execution-example",
+  "parameters": {
+    "calculation": "scf",
+    "ecutwfc": 30,
+    "ecutrho": 240,
+    "kpoints": [
+      1,
+      1,
+      1
+    ],
+    "electrons": {
+      "conv_thr": 1e-08
+    },
+    "magnetic_moments": [
+      1,
+      0,
+      0
+    ],
+    "system": {
+      "nspin": 2,
+      "tot_magnetization": 1
+    },
+    "fixed_cartesian": [
+      {
+        "index": 0,
+        "mask": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "index": 1,
+        "mask": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "index": 2,
+        "mask": [
+          false,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  "pseudopotentials": {
+    "H": "inputs/h.upf"
+  },
+  "models": [
+    {
+      "id": "initial",
+      "structure_file": "inputs/h-exchange-initial.extxyz"
+    },
+    {
+      "id": "final",
+      "structure_file": "inputs/h-exchange-final.extxyz"
+    }
+  ],
+  "neb": {
+    "initial": "initial",
+    "final": "final",
+    "images": 3,
+    "force_threshold_eV_A": 0.15,
+    "steps": 40,
+    "climb": true,
+    "interpolation": "linear"
+  }
+}

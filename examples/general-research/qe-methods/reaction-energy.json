@@ -1,0 +1,75 @@
+{
+  "method": "reaction-energy",
+  "purpose": "small-execution-example",
+  "parameters": {
+    "calculation": "scf",
+    "ecutwfc": 30,
+    "ecutrho": 240,
+    "kpoints": [
+      1,
+      1,
+      1
+    ],
+    "electrons": {
+      "conv_thr": 1e-08
+    }
+  },
+  "pseudopotentials": {
+    "H": "inputs/h.upf"
+  },
+  "models": [
+    {
+      "id": "hydrogen",
+      "structure_file": "inputs/hydrogen.extxyz",
+      "vibrations": {
+        "model": "ideal-gas",
+        "geometry": "linear",
+        "symmetrynumber": 2,
+        "spin": 0,
+        "delta_A": 0.01
+      }
+    },
+    {
+      "id": "atom",
+      "structure_file": "inputs/hydrogen-atom.extxyz",
+      "parameters": {
+        "magnetic_moments": [
+          1
+        ],
+        "system": {
+          "nspin": 2,
+          "tot_magnetization": 1
+        }
+      },
+      "vibrations": {
+        "model": "ideal-gas",
+        "geometry": "monatomic",
+        "symmetrynumber": 1,
+        "spin": 0.5,
+        "delta_A": 0.01
+      }
+    }
+  ],
+  "energy_kind": "free-energy",
+  "thermochemistry": {
+    "temperature_K": 298.15,
+    "pressure_Pa": 100000
+  },
+  "reference_state": "reactants",
+  "states": [
+    {
+      "id": "reactants",
+      "label": "H2",
+      "coefficients": {
+        "hydrogen": 1
+      }
+    },
+    {
+      "id": "products",
+      "label": "2H",
+      "coefficients": {
+        "atom": 2
+      }
+    }
+  ]
+}

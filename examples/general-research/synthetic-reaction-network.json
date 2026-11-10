@@ -1,0 +1,7 @@
+{
+  "operation": "network",
+  "species": {"A": 0.001, "B": 0},
+  "reactions": [{"reactants": {"A": 1}, "products": {"B": 1}, "k": 0.1, "parameter_basis": "assumed"}],
+  "duration_s": 30,
+  "points": 65
+}

@@ -1,0 +1,189 @@
+{
+  "schema": "highzyme.evidence.v1",
+  "title": "Synthetic assay evidence",
+  "question": "Compare conditions; these are software fixtures.",
+  "materials": [
+    {
+      "id": "m1",
+      "name": "sample-a"
+    },
+    {
+      "id": "m2",
+      "name": "sample-b"
+    }
+  ],
+  "assays": [
+    {
+      "id": "a1",
+      "material_id": "m1",
+      "label": "sample-a TMB assay"
+    },
+    {
+      "id": "a2",
+      "material_id": "m2",
+      "label": "sample-b TMB assay"
+    }
+  ],
+  "facts": [
+    {
+      "id": "f1-activity",
+      "material_id": "m1",
+      "assay_id": "a1",
+      "field": "activity",
+      "value_raw": "POD-like",
+      "unit_raw": "",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[3]",
+          "quote": "POD-like"
+        }
+      ]
+    },
+    {
+      "id": "f1-substrate",
+      "material_id": "m1",
+      "assay_id": "a1",
+      "field": "substrate",
+      "value_raw": "TMB",
+      "unit_raw": "",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[3]",
+          "quote": "TMB"
+        }
+      ]
+    },
+    {
+      "id": "f1-pH",
+      "material_id": "m1",
+      "assay_id": "a1",
+      "field": "pH",
+      "value_raw": "4.0",
+      "unit_raw": "",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[3]",
+          "quote": "4.0"
+        }
+      ]
+    },
+    {
+      "id": "f1-temperature",
+      "material_id": "m1",
+      "assay_id": "a1",
+      "field": "temperature",
+      "value_raw": "25",
+      "unit_raw": "degC",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[3]",
+          "quote": "25 degC"
+        }
+      ]
+    },
+    {
+      "id": "f1-km",
+      "material_id": "m1",
+      "assay_id": "a1",
+      "field": "km",
+      "value_raw": "0.30",
+      "unit_raw": "mM",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[3]",
+          "quote": "0.30 mM"
+        }
+      ]
+    },
+    {
+      "id": "f2-activity",
+      "material_id": "m2",
+      "assay_id": "a2",
+      "field": "activity",
+      "value_raw": "POD-like",
+      "unit_raw": "",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[4]",
+          "quote": "POD-like"
+        }
+      ]
+    },
+    {
+      "id": "f2-substrate",
+      "material_id": "m2",
+      "assay_id": "a2",
+      "field": "substrate",
+      "value_raw": "TMB",
+      "unit_raw": "",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[4]",
+          "quote": "TMB"
+        }
+      ]
+    },
+    {
+      "id": "f2-pH",
+      "material_id": "m2",
+      "assay_id": "a2",
+      "field": "pH",
+      "value_raw": "5.0",
+      "unit_raw": "",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[4]",
+          "quote": "5.0"
+        }
+      ]
+    },
+    {
+      "id": "f2-temperature",
+      "material_id": "m2",
+      "assay_id": "a2",
+      "field": "temperature",
+      "value_raw": "25",
+      "unit_raw": "degC",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[4]",
+          "quote": "25 degC"
+        }
+      ]
+    },
+    {
+      "id": "f2-km",
+      "material_id": "m2",
+      "assay_id": "a2",
+      "field": "km",
+      "value_raw": "300",
+      "unit_raw": "uM",
+      "review": "supported",
+      "evidence": [
+        {
+          "file": "synthetic-assay-source.md",
+          "locator": "lines[4]",
+          "quote": "300 uM"
+        }
+      ]
+    }
+  ]
+}

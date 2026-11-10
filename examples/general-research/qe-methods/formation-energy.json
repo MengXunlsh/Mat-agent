@@ -1,0 +1,37 @@
+{
+  "method": "formation-energy",
+  "purpose": "small-execution-example",
+  "parameters": {
+    "calculation": "scf",
+    "ecutwfc": 30,
+    "ecutrho": 120,
+    "kpoints": [
+      1,
+      1,
+      1
+    ]
+  },
+  "pseudopotentials": {
+    "Si": "inputs/si.upf"
+  },
+  "models": [
+    {
+      "id": "perfect",
+      "structure_file": "inputs/silicon.extxyz"
+    },
+    {
+      "id": "vacancy",
+      "structure_file": "inputs/silicon-vacancy.extxyz"
+    }
+  ],
+  "combinations": [
+    {
+      "id": "vacancy",
+      "label": "Si vacancy (small cell)",
+      "coefficients": {
+        "vacancy": 1,
+        "perfect": -0.5
+      }
+    }
+  ]
+}

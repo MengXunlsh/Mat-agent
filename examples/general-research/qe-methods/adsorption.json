@@ -1,0 +1,49 @@
+{
+  "method": "adsorption",
+  "purpose": "small-execution-example",
+  "parameters": {
+    "calculation": "scf",
+    "ecutwfc": 30,
+    "ecutrho": 240,
+    "kpoints": [
+      1,
+      1,
+      1
+    ],
+    "electrons": {
+      "conv_thr": 1e-08
+    }
+  },
+  "pseudopotentials": {
+    "H": "inputs/h.upf"
+  },
+  "models": [
+    {
+      "id": "hydrogen",
+      "structure_file": "inputs/hydrogen.extxyz"
+    },
+    {
+      "id": "atom",
+      "structure_file": "inputs/hydrogen-atom.extxyz",
+      "parameters": {
+        "magnetic_moments": [
+          1
+        ],
+        "system": {
+          "nspin": 2,
+          "tot_magnetization": 1
+        }
+      }
+    }
+  ],
+  "combinations": [
+    {
+      "id": "h-h-binding",
+      "label": "H2 binding",
+      "coefficients": {
+        "hydrogen": 1,
+        "atom": -2
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/deepseek-ai/deepseek-harness.git",
+  "tag": "dsh-v0.2.1-rc.2",
+  "commit": "687f282e8625c6b8d11ff58211a90524be2e4317",
+  "dsh_version": "0.2.1-rc.2",
+  "runtime": "integrations/deepseek-harness/web-runtime/package-lock.json",
+  "customization": "integrations/deepseek-harness/foundation",
+  "generated_adapters": [
+    "scripts/prepare_harness_web.py",
+    "scripts/harness_ui_extensions.py",
+    "scripts/harness_lifecycle_extensions.py"
+  ],
+  "upstream_checkout_required": false
+}

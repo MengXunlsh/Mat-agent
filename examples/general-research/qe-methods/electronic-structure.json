@@ -1,0 +1,74 @@
+{
+  "method": "electronic-structure",
+  "purpose": "small-execution-example",
+  "parameters": {
+    "calculation": "scf",
+    "ecutwfc": 30,
+    "ecutrho": 120,
+    "kpoints": [
+      1,
+      1,
+      1
+    ]
+  },
+  "pseudopotentials": {
+    "Si": "inputs/si.upf"
+  },
+  "models": [
+    {
+      "id": "perfect",
+      "structure_file": "inputs/silicon.extxyz"
+    }
+  ],
+  "electronic": {
+    "model": "perfect",
+    "kpoints": [
+      2,
+      2,
+      2
+    ],
+    "system": {
+      "nbnd": 8,
+      "occupations": "smearing",
+      "smearing": "gaussian",
+      "degauss": 0.01
+    },
+    "pdos": true,
+    "DeltaE": 0.1,
+    "degauss": 0.01,
+    "pdos_groups": [
+      {
+        "id": "si-p",
+        "label": "Si p",
+        "atoms": [
+          0,
+          1
+        ],
+        "orbital": "p",
+        "window_eV": [
+          -12,
+          0
+        ]
+      }
+    ],
+    "bands": {
+      "points": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "\u0393",
+        "X"
+      ],
+      "points_per_segment": 4
+    }
+  }
+}
