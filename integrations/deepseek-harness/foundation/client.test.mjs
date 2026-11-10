@@ -12,7 +12,7 @@ test('the browser API coalesces concurrent reads without caching mutations or fa
   const server = http.createServer(async (request, response) => {
     let body = ''; for await (const chunk of request) body += chunk;
     const input = JSON.parse(body); calls.push(input);
-    if (input.action === 'dataset.read' && fail) { fail = false; response.statusCode = 400; response.end(JSON.stringify({ error: 'Select a record' })); }
+    if (input.action === 'artifact.read' && fail) { fail = false; response.statusCode = 400; response.end(JSON.stringify({ error: 'Select a record' })); }
     else response.end(JSON.stringify({ value: input.value || 1 }));
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -22,8 +22,8 @@ test('the browser API coalesces concurrent reads without caching mutations or fa
     assert.equal(reads[0].value, 1); assert.equal(calls.length, 1);
     await api('project.tasks', { projectId: 'p' }); assert.equal(calls.length, 2);
     await Promise.all([api('access.save', { value: 2 }), api('access.save', { value: 2 })]); assert.equal(calls.length, 4);
-    await assert.rejects(api('dataset.read'), /Select a record/);
-    assert.equal((await api('dataset.read')).value, 1);
+    await assert.rejects(api('artifact.read'), /Select a record/);
+    assert.equal((await api('artifact.read')).value, 1);
     assert.equal(calls.length, 6);
   } finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
 });

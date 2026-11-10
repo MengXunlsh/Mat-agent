@@ -8,7 +8,7 @@
 
 ## 运行结构
 
-DeepSeek Harness 负责对话、模型连接、计划、上下文压缩、文件和 Shell、持久终端、后台任务、子 Agent 及原生交互。mat-agent 插件负责项目科研状态、成果、授权、数据库和计算编排；Python 科学模块负责文档／结构解析、数值计算与图件生成。
+DeepSeek Harness 负责对话、模型连接、计划、上下文压缩、文件和 Shell、持久终端、后台任务、子 Agent 及原生交互。mat-agent 插件负责项目科研状态、成果、授权和计算编排；Python 科学模块负责文档／结构解析、数值计算与图件生成。
 
 ```text
 用户研究任务
@@ -69,7 +69,6 @@ DeepSeek Harness 负责对话、模型连接、计划、上下文压缩、文件
 |---|---|
 | literature-evidence | 从文献与补充资料形成材料、样品、测定及来源证据 |
 | publication-retrieval | 按 DOI／PMCID／PMID 获取可访问正文、摘要或支持的补充材料 |
-| nanozyme-dataset | 查询、读取并保存结构化纳米酶资料，按需使用材料空间 |
 | assay-comparison | 对照选定测定的条件、数值、单位、来源和缺失项 |
 | material-structure-check | 核对化学式、SMILES、分子／晶体／坐标文件 |
 | initial-rate-kinetics | 底物浓度—初始速率的单组或多组 Michaelis–Menten 拟合 |
@@ -98,21 +97,9 @@ PDF／DOCX 可按页或文本块读取；扫描页需要渲染为图片并使用
 
 在“项目面板 → 全部文件”定位本地科研资料，再到“权限”授权 Agent 读取。CSV、TSV、XLSX 可用于校准等表格分析，CIF、XYZ 等结构文件可用于结构核对，PDF、DOCX 可用于文档读取。根据任务选择支持该格式的工具。从其他数据库导出的表格也可以按这个方式使用。
 
-### 可选的结构化纳米酶数据集
-
-这个接入口需要符合纳米酶数据布局的文件与注册表。当前版本没有内置任意 SQLite、PostgreSQL 或外部材料数据库的直连功能。
-
-在“设置 → 工具与计算资源 → 纳米酶数据”选择兼容的本地 `database_registry.json`，也可设置 `HIGHZYME_DATASET_REGISTRY`。连接成功后，项目面板会显示数据查询入口。
-
-数据库工具覆盖分类目录、筛选、材料—版本—测定详情、按条读取和资料保存：`highzyme_dataset_catalog/search/material/read/save`。选定记录保存完整证据，模型默认读取使用较精简的观察与来源，详细信息按需读取。缺失、原始值、单位、条件和来源位置继续保留。
-
-在同一设置中可连接兼容的材料空间注册表，也可以设置 `HIGHZYME_MATERIAL_SPACE_REGISTRY`。二维坐标用于展示分布，相似查询使用注册的描述符。
-
-读取进程复用已核对数据与最近查询结果，翻页只改变切片。数据版本和五项资产哈希一致后才使用相应资源。数据库文件保持只读；选择的资料、分析和提案保存于用户项目。
-
 ### 文献证据
 
-文献证据使用 `highzyme.evidence.v1`。`highzyme_evidence_save` 保存通过结构检查的草稿，`highzyme_compare_evidence` 比较 2–12 条选定测定，保留单位差异、多值、条件缺失与冲突。使用数据库快照不等于重新阅读原始论文，具体读取范围保存在成果来源中。
+文献证据使用 `highzyme.evidence.v1`。`highzyme_evidence_save` 保存通过结构检查的草稿，`highzyme_compare_evidence` 比较 2–12 条选定测定，保留单位差异、多值、条件缺失与冲突。
 
 ## 案例研究与验证反馈
 

@@ -21,7 +21,6 @@ import { registerComputeTools, collectQE, updateComputeJob, reconcileComputeJobs
 import { artifactVisual, artifactMedia } from './result-views.mjs';
 import { JOB_DEFAULTS } from './resource-policy.mjs';
 import { DefaultModelSettings } from './default-model.mjs';
-import { DatasetService, registerDatasetTools, saveDatasetRecord } from './dataset.mjs';
 import { RESEARCH_WORKFLOWS, caseResearch, updateCaseResearch, researchValidations, registerCaseResearchTools } from './case-research.mjs';
 
 const requireRuntime = createRequire(new URL('../web-runtime/package.json', import.meta.url));
@@ -34,9 +33,6 @@ export const inject = ['tools', 'connection', 'credentials', 'workspaceRegistry'
 
 export async function apply(ctx) {
   const defaultModel = new DefaultModelSettings(ctx);
-  const dataset = new DatasetService(home);
-  await dataset.load();
-  ctx.effect(() => () => dataset.dispose());
   const projects = new Map(), pending = new Map(), restrictions = new Map(), drafts = new Map(), organizers = new Set(), resources = new ComputeResources(home, ctx.credentials);
   await resources.load();
   const operationsFile = path.join(home, 'operations.json');
@@ -77,8 +73,6 @@ export async function apply(ctx) {
     restrictions.get(agent.session.id)?.();
     const p = liveProject(agent.session);
     const deny = p?.access.compute && resources.list().some(r => r.enabled) ? [] : ['highzyme_compute_submit', 'highzyme_qe_submit', 'highzyme_qe_test'];
-    if (!dataset.registry) deny.push('highzyme_dataset_catalog', 'highzyme_dataset_material', 'highzyme_dataset_search', 'highzyme_dataset_read', 'highzyme_dataset_save', 'highzyme_material_space');
-    else if (!dataset.analysisRegistry) deny.push('highzyme_material_space');
     if (p && (p.access.content === 'selected' || p.access.denyRead.length || p.access.denyWrite.length)) deny.push('bash', 'pwsh', 'glob', 'grep', 'present');
     if (p && !p.access.shell) deny.push('bash', 'pwsh');
     if (p && !p.access.network) deny.push('web_search', 'web_fetch', 'highzyme_retrieve_publication');
@@ -90,7 +84,6 @@ export async function apply(ctx) {
     const c = p.caseFor(ownerSession(session));
     return projectContext(p, c, { localShell: p.access.shell, memoryEnabled: memories.get(p.id)?.enabled || false,
       scientificRuntime,
-      dataset: { connected: !!dataset.registry, materialSpace: !!dataset.registry && !!dataset.analysisRegistry },
       researchWorkflow: { kind: c?.research?.kind || 'general', stage: c?.research?.stage || 'objective', file: c?.research?.file || null, skill: RESEARCH_WORKFLOWS[c?.research?.kind || 'general']?.skill || null },
       artifactDirectory: c ? c.folder + '/artifacts' : p.data.artifactFolders?.[ownerSession(session)?.id] ? 'artifacts/' + p.data.artifactFolders[ownerSession(session).id] : 'artifacts/<english-discussion-keywords>',
       compute: resources.list().filter(r => r.enabled && p.access.compute).map(r => ({ id: r.id, name: r.name, capabilities: r.probe?.capabilities || [] })) });
@@ -130,7 +123,6 @@ export async function apply(ctx) {
     output: { schema: { type: 'object', additionalProperties: true }, render: (_args, value) => [{ type: 'text', text: JSON.stringify(value) }] }, execute }));
   registerCalculationTools({ tool, requireProject, ownerFor });
   registerDocumentTools({ tool, requireProject, ownerFor });
-  registerDatasetTools({ tool, requireProject, ownerFor, dataset });
   registerCaseResearchTools({ tool, requireProject, ownerFor, caseFor: (p, session) => p.caseFor(ownerSession(session)) });
   registerArtifactTools({ tool, requireProject, ownerFor, caseFor: (p, session) => p.caseFor(ownerSession(session)) });
   tool('highzyme_delegate_research', 'Assign a bounded literature extraction, data analysis or evidence review to a native Harness subagent. Use for substantial independent work, not simple calculations. The child inherits the current model and project permissions. Returns a task ID; use highzyme_research_task to wait for or cancel it.', {
@@ -308,24 +300,10 @@ export async function apply(ctx) {
     const listed = (await ctx.get('sessionController').list({})).items;
     const archives = base.data.cases.filter(c => c.status !== 'active').map(c => ({ id: c.id, title: c.title, kind: 'case', status: c.status, time: c.updatedAt || c.createdAt, folder: c.folder }));
     for (const sid of sessions) if (!base.data.cases.some(c => c.sessions.includes(sid)) && ctx.workspaceRegistry.archivedSessionIds.includes(sid)) archives.push({ id: sid, title: listed.find(s => s.sessionId === sid)?.projections?.values?.title || sid, kind: 'session', status: base.data.sessionStates?.[sid]?.status || 'archived', time: base.data.sessionStates?.[sid]?.time || null });
-    return { id, path: p.root, ...p.data, datasetConnected: !!dataset.registry, access: p.access, jobs, history, archives, sessionTitles: Object.fromEntries(listed.filter(s => sessions.includes(s.sessionId)).map(s => [s.sessionId, s.projections?.values?.title || ''])), memory: await memories.get(id).config(), workarea: workareas.get(id).row(sessionId) || null };
+    return { id, path: p.root, ...p.data, access: p.access, jobs, history, archives, sessionTitles: Object.fromEntries(listed.filter(s => sessions.includes(s.sessionId)).map(s => [s.sessionId, s.projections?.values?.title || ''])), memory: await memories.get(id).config(), workarea: workareas.get(id).row(sessionId) || null };
   }
   async function api(request) {
     const { action = 'state', ...input } = request.method === 'POST' ? await request.json() : {};
-    if (action === 'dataset.config') return { registry: dataset.registry, analysisRegistry: dataset.analysisRegistry };
-    if (action === 'dataset.choose') return runPython('highzyme.foundation_science', { action: 'choose_file', kind: 'dataset' });
-    if (action === 'dataset.connect') {
-      const result = await dataset.configure(input.registry, input.analysisRegistry);
-      for (const agent of ctx.agents.list()) updateTools(agent);
-      return result;
-    }
-    if (['dataset.catalog', 'dataset.search', 'dataset.read'].includes(action)) return dataset.request(action.slice(8), action === 'dataset.read' ? { ...input, detail: input.detail || 'full' } : input);
-    if (action === 'dataset.save') {
-      const p = await project(input.projectId);
-      const session = await readSession(p, input.sessionId);
-      return saveDatasetRecord(await workareas.get(p.id).view(session.id), dataset, input.selection_id, ownerFor(p, session), input.title);
-    }
-    if (action === 'state') return { version: 4, operations, jobDefaults: JOB_DEFAULTS, projects: ctx.workspaceRegistry.list().map(w => ({ id: w.id, name: w.title, path: w.path, sessions: w.sessionIds, cases: projects.get(w.id)?.data.cases || [] })), resources: resources.list() };
     if (action === 'model.catalog') return defaultModel.catalog();
     if (action === 'model.default') return defaultModel.save(input);
     if (action === 'operations.save') {

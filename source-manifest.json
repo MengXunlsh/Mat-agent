@@ -23,26 +23,26 @@
     {
       "file": "README.md",
       "source": "README.md",
-      "sha256": "eb47f5a28cce1d43ddbd07b25d650629fd55de9bbe2f359e04638b93aeacfcd0",
-      "bytes": 3273
+      "sha256": "a8cedd2d905d5cce5d54b5f61637e46cea1930f58a450c5c7b94307acb836ffd",
+      "bytes": 2916
     },
     {
       "file": "README.zh-CN.md",
       "source": "README.zh-CN.md",
-      "sha256": "54e775aaecf68aba02818ab5525ce094de041b2be0521af40e9e5d80cdb4ea71",
-      "bytes": 2971
+      "sha256": "9419ec58584475c4cccb4889b9ccf362aff20e83e63b600ff4d6b3ae908caa14",
+      "bytes": 2651
     },
     {
       "file": "docs/usage-guide.md",
       "source": "docs/usage-guide.md",
-      "sha256": "4ba8652d76857b0cb22b51b8ea14b6f80655950d144c215db28519c8c10ac1f4",
-      "bytes": 15586
+      "sha256": "f13c27ba2e861067005963300ee5f535f3147ff18889adff6e114ff7e05eba9e",
+      "bytes": 14080
     },
     {
       "file": "docs/usage-guide.zh-CN.md",
       "source": "docs/usage-guide.zh-CN.md",
-      "sha256": "7dbe6040662d1328746db458ffde4611f6b1992aaa32cfdaecc9fc69a2333879",
-      "bytes": 15083
+      "sha256": "ca8e430933786782c232fabbac8bb7723646486de9387d494ee162ed54496b1a",
+      "bytes": 13678
     },
     {
       "file": "examples/general-research/README.md",
@@ -227,14 +227,14 @@
     {
       "file": "integrations/deepseek-harness/README.md",
       "source": "integrations/deepseek-harness/README.md",
-      "sha256": "fdc98dbf40d3abc7b76aee495de6616e50477c685596fef92af1ce06c9779501",
-      "bytes": 2663
+      "sha256": "35ec710970f853f31314255a5979cb2d9833d0e65dc34b2539ebd0624714d36d",
+      "bytes": 2672
     },
     {
       "file": "integrations/deepseek-harness/README.zh-CN.md",
       "source": "integrations/deepseek-harness/README.zh-CN.md",
-      "sha256": "8862cd8c974e987c5702c3944d8407d4c0219502fec07c8b047c75c93da50d3a",
-      "bytes": 2400
+      "sha256": "33f832c824245b00cf7ce9407da7815cad3249e6f2584a5aeb1df3de619da678",
+      "bytes": 2403
     },
     {
       "file": "integrations/deepseek-harness/foundation/agents/analysis.md",
@@ -281,8 +281,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/calculation-tools.test.mjs",
       "source": "integrations/deepseek-harness/foundation/calculation-tools.test.mjs",
-      "sha256": "06331062188cced1c956a134dea49a8f1f928807c668d0cbe3e4b8a371eaefa5",
-      "bytes": 4230
+      "sha256": "bfb3c408e134d8bdab4ac69f0071b4fb3f56ce96783b7f8d206725efb5c4b30c",
+      "bytes": 4484
     },
     {
       "file": "integrations/deepseek-harness/foundation/case-research.mjs",
@@ -299,14 +299,14 @@
     {
       "file": "integrations/deepseek-harness/foundation/client.js",
       "source": "integrations/deepseek-harness/foundation/client.js",
-      "sha256": "f0c1ea07f520a059a85e748937365803520b9382bab46564d5739dee50198000",
-      "bytes": 158902
+      "sha256": "6f4f6630b699df385a693951ade46615db84d135bed301cce665d2dfdc4d7625",
+      "bytes": 147531
     },
     {
       "file": "integrations/deepseek-harness/foundation/client.test.mjs",
       "source": "integrations/deepseek-harness/foundation/client.test.mjs",
-      "sha256": "59c5c60b6b7dbbfa90a946648757d03c480623eb1a333544c2a7626301fe8659",
-      "bytes": 1839
+      "sha256": "c0a0deff7ee8eb34c2bd3605bd78c57a5ef057f44949004aebc8b6542528f41c",
+      "bytes": 1842
     },
     {
       "file": "integrations/deepseek-harness/foundation/compute-tools.mjs",
@@ -325,18 +325,6 @@
       "source": "integrations/deepseek-harness/foundation/cordis.patch.yml",
       "sha256": "e801b45f19fa600b79b301a22f1ca813200c7d19556cdb0e047ed5710b171ebe",
       "bytes": 1489
-    },
-    {
-      "file": "integrations/deepseek-harness/foundation/dataset.mjs",
-      "source": "integrations/deepseek-harness/foundation/dataset.mjs",
-      "sha256": "08c8500b87b3123ddcd93efa5f501c034d2825a5b345c2a082162b7b74b4a1ca",
-      "bytes": 8873
-    },
-    {
-      "file": "integrations/deepseek-harness/foundation/dataset.test.mjs",
-      "source": "integrations/deepseek-harness/foundation/dataset.test.mjs",
-      "sha256": "bdaf41ae110296297c4583d9db95d97682e6d815ff40a7589f2cdd15291a110b",
-      "bytes": 9502
     },
     {
       "file": "integrations/deepseek-harness/foundation/default-model.mjs",
@@ -371,8 +359,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/index.mjs",
       "source": "integrations/deepseek-harness/foundation/index.mjs",
-      "sha256": "356726dfd31554bbb13e719e4ef47a027268eb7e8ad803f23e6449a88e7415d5",
-      "bytes": 48641
+      "sha256": "325998e250aa72bb5e95656a4a6810ccdd34c174e81f8c777bc3ec34619f77c9",
+      "bytes": 46695
     },
     {
       "file": "integrations/deepseek-harness/foundation/kinetics.mjs",
@@ -419,8 +407,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/research-persona.txt",
       "source": "integrations/deepseek-harness/foundation/research-persona.txt",
-      "sha256": "b23cee3c3770a11a42ea59288b6d51733da8ab823f5216a6e9dc4b54d78d2e41",
-      "bytes": 14842
+      "sha256": "ca7b1904aef869352ceeafb0544d01ab182e68f06c39051e9e577c60fc211403",
+      "bytes": 14510
     },
     {
       "file": "integrations/deepseek-harness/foundation/research-plan.txt",
@@ -431,8 +419,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/research.mjs",
       "source": "integrations/deepseek-harness/foundation/research.mjs",
-      "sha256": "3f646a5c82cff8bff6b5c25cde234bde97850082176fbc9247ebfaeb81a53273",
-      "bytes": 27054
+      "sha256": "4af2b179c93f4b127e5bcafa3e352f65782429072ff1674f95378be4eb7e4013",
+      "bytes": 26937
     },
     {
       "file": "integrations/deepseek-harness/foundation/research.test.mjs",
@@ -467,14 +455,14 @@
     {
       "file": "integrations/deepseek-harness/foundation/skills.test.mjs",
       "source": "integrations/deepseek-harness/foundation/skills.test.mjs",
-      "sha256": "29503baaa7001da08b19fd23f864948bc9e6b2da879c073c18b9a41759f35c6f",
-      "bytes": 1856
+      "sha256": "d05518feead3931b28b9367289062ebf0b1c80dea1afbc958e7b298bd5e7e468",
+      "bytes": 1836
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/application-exploration/SKILL.md",
       "source": "integrations/deepseek-harness/foundation/skills/application-exploration/SKILL.md",
-      "sha256": "e9a91407e4419df7c53d433b35e5bfe8ed58bffe2af065a996bbe61c358a4727",
-      "bytes": 3975
+      "sha256": "04b7a973fd0fce7003687a530925028e2620a179155296d9c74e904633fabd09",
+      "bytes": 3307
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/assay-comparison/SKILL.md",
@@ -521,8 +509,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/skills/literature-evidence/SKILL.md",
       "source": "integrations/deepseek-harness/foundation/skills/literature-evidence/SKILL.md",
-      "sha256": "6d7687e3ad48a7b4780c1583eb137db5413dc511013570228a7623c45c560fbe",
-      "bytes": 4436
+      "sha256": "4b118fa143e19c86b228e04a03efac831fe81cfe1b2d5d452f2445b2f2ca1b20",
+      "bytes": 4366
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/literature-evidence/evidence-schema.md",
@@ -533,8 +521,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/skills/material-design/SKILL.md",
       "source": "integrations/deepseek-harness/foundation/skills/material-design/SKILL.md",
-      "sha256": "5a868c5509e3836c31b9bc1db83878a3e81ca8032dcd36bd4366b2f690f40c2a",
-      "bytes": 4129
+      "sha256": "2d9910e3fe1cdfe21f785068d86b6759eee34f774248983db01259f858fbeffc",
+      "bytes": 3793
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/material-design/families.md",
@@ -545,8 +533,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/skills/material-design/references.md",
       "source": "integrations/deepseek-harness/foundation/skills/material-design/references.md",
-      "sha256": "3ba2fd2cc60a6f86126323e212c5d601f3d7888dc4ec98d313f47377323e4e21",
-      "bytes": 2462
+      "sha256": "55b68baa4a952881582527e6b14bb32df828c530d7f4f07fe249c9cc4b0be8b9",
+      "bytes": 2281
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/material-structure-check/SKILL.md",
@@ -555,16 +543,10 @@
       "bytes": 1888
     },
     {
-      "file": "integrations/deepseek-harness/foundation/skills/nanozyme-dataset/SKILL.md",
-      "source": "integrations/deepseek-harness/foundation/skills/nanozyme-dataset/SKILL.md",
-      "sha256": "0880e2c0a48c807a77572ea5e622d0feb253fb799ff11dfff63b8377148ddc9e",
-      "bytes": 3612
-    },
-    {
       "file": "integrations/deepseek-harness/foundation/skills/publication-retrieval/SKILL.md",
       "source": "integrations/deepseek-harness/foundation/skills/publication-retrieval/SKILL.md",
-      "sha256": "76a7647f74a78a72ce7bf7e5fa849c6b2bb03f0c22e0c4eaa2d89a57c218dbe3",
-      "bytes": 1362
+      "sha256": "ad83777d2e5fc5b26ad86654b3b4c49805d8151307f8ecb92edc6c43de7b3fc1",
+      "bytes": 1287
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/reaction-simulation/SKILL.md",
@@ -581,8 +563,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/skills/scientific-computing/SKILL.md",
       "source": "integrations/deepseek-harness/foundation/skills/scientific-computing/SKILL.md",
-      "sha256": "0b28d09fac63d90e75ebc6cba4d3fbe93b5506b783e33b8db0b0157ff5ddbdfc",
-      "bytes": 5152
+      "sha256": "bfcaf3a66d1c481ea2c8210999dcaed36f7b188c95a21d1c86f260b1514dac75",
+      "bytes": 5128
     },
     {
       "file": "integrations/deepseek-harness/foundation/skills/scientific-computing/inputs.md",
@@ -617,8 +599,8 @@
     {
       "file": "integrations/deepseek-harness/foundation/style.css",
       "source": "integrations/deepseek-harness/foundation/style.css",
-      "sha256": "556e7abc5a7a42fe28c2b7ec164bf2faab73e9e612a07385aa04967471596d6c",
-      "bytes": 21307
+      "sha256": "075166cb477c517b7ec600fc149595da8e6395abca49912fadd7808ac37d4617",
+      "bytes": 20759
     },
     {
       "file": "integrations/deepseek-harness/foundation/subagent-persona.txt",
@@ -677,8 +659,8 @@
     {
       "file": "scripts/check_foundation.py",
       "source": "scripts/check_foundation.py",
-      "sha256": "210f5b999a506642703d35fd5d1ab0bafba800fb1799d955ae1a42653721f3cf",
-      "bytes": 1039
+      "sha256": "7bd82cd880e5809619772f46f8a13d5062f32797765ef2fe09db606f78654052",
+      "bytes": 1012
     },
     {
       "file": "scripts/harness_lifecycle_extensions.py",
@@ -819,64 +801,22 @@
       "bytes": 2820
     },
     {
-      "file": "src/highzyme/dataset_runtime.py",
-      "source": "src/highzyme/dataset_runtime.py",
-      "sha256": "be7664c87fc0ecb975eab609047ba1b8a54681845d2143a64150a9ac2172506b",
-      "bytes": 5945
-    },
-    {
       "file": "src/highzyme/evidence/__init__.py",
       "source": "src/highzyme/evidence/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "bytes": 0
     },
     {
-      "file": "src/highzyme/evidence/assay_projection.py",
-      "source": "src/highzyme/evidence/assay_projection.py",
-      "sha256": "9ed654ee5f661dd5b880d67b37fd37ca2b9c9a85c0221bda74b959e880f360f7",
-      "bytes": 4769
-    },
-    {
       "file": "src/highzyme/evidence/dataset_evidence.py",
       "source": "src/highzyme/evidence/dataset_evidence.py",
-      "sha256": "35db27aea395050556d86b17853e0385146b0fe6eabc64b723c22b9058429d17",
-      "bytes": 3004
-    },
-    {
-      "file": "src/highzyme/evidence/entity_projection.py",
-      "source": "src/highzyme/evidence/entity_projection.py",
-      "sha256": "a9d32793985e515085dbfe5b7d9ee9cf9a27fef6f8432fd88b766e7d5358d692",
-      "bytes": 1938
-    },
-    {
-      "file": "src/highzyme/evidence/knowledge_adoption.py",
-      "source": "src/highzyme/evidence/knowledge_adoption.py",
-      "sha256": "0d121be5c0a564c489fc4521d0b6672b50b3952555b2a739b3e1df8718e020b4",
-      "bytes": 2489
-    },
-    {
-      "file": "src/highzyme/evidence/knowledge_query.py",
-      "source": "src/highzyme/evidence/knowledge_query.py",
-      "sha256": "5e012bcbb3d89223c940cff5e4dde9b4658a8774ad3ab96d8a66fa53a9cce2bb",
-      "bytes": 11038
+      "sha256": "bbaf54efc8b2768b5288295f7d892dce1d122f4391be8e271afb722b3074a71d",
+      "bytes": 3578
     },
     {
       "file": "src/highzyme/evidence/local_documents.py",
       "source": "src/highzyme/evidence/local_documents.py",
       "sha256": "5394499fd55d4a6dd9d9b78b01101d2d03a41da6a15db39109103d35fdef6fc0",
       "bytes": 13701
-    },
-    {
-      "file": "src/highzyme/evidence/material_features_space.py",
-      "source": "src/highzyme/evidence/material_features_space.py",
-      "sha256": "63324c75954e80ecc2d476dea3b8ad2662d87a92b2cffc780f291125f07f1745",
-      "bytes": 20143
-    },
-    {
-      "file": "src/highzyme/evidence/material_space.py",
-      "source": "src/highzyme/evidence/material_space.py",
-      "sha256": "9e96fb82db3687ffa36485b888fa95cd15e482ff43e5401637d0bc9f5df248df",
-      "bytes": 12118
     },
     {
       "file": "src/highzyme/evidence/project_documents.py",
@@ -897,12 +837,6 @@
       "bytes": 13066
     },
     {
-      "file": "src/highzyme/evidence/structured_knowledge.py",
-      "source": "src/highzyme/evidence/structured_knowledge.py",
-      "sha256": "4f976b6d00caf99243a0c02b0c17925f9e76f596c25d5e3d5f69bdd23e78e13d",
-      "bytes": 54424
-    },
-    {
       "file": "src/highzyme/evidence/visual_reader.py",
       "source": "src/highzyme/evidence/visual_reader.py",
       "sha256": "5cd3e4153716f84f09007aa5bd2744b3dc1068046fd4bed727d62d89b495561b",
@@ -911,8 +845,8 @@
     {
       "file": "src/highzyme/foundation_science.py",
       "source": "src/highzyme/foundation_science.py",
-      "sha256": "325aa8d7d5cae1a38742422a19ed73804f6f356773e6a652c557b6215d040a25",
-      "bytes": 5450
+      "sha256": "5c2b5f3e1820f5ec94544d84b3385cf8bae780670f04faeb0085f7a267c77e31",
+      "bytes": 5460
     },
     {
       "file": "src/highzyme/infrastructure/__init__.py",
@@ -935,8 +869,8 @@
     {
       "file": "src/highzyme/infrastructure/file_dialogs.py",
       "source": "src/highzyme/infrastructure/file_dialogs.py",
-      "sha256": "ae86ac2f73e814e7ed1ac276155d547c03c3d164a61dfdd9cdc64656f664b535",
-      "bytes": 1306
+      "sha256": "ebe35a5b56902633de94296e76b93e4722e7ace49d5208cb34c6b6cb20b22994",
+      "bytes": 1159
     },
     {
       "file": "src/highzyme/infrastructure/runtime_paths.py",
@@ -1083,12 +1017,6 @@
       "bytes": 9520
     },
     {
-      "file": "tests/test_dataset_runtime.py",
-      "source": "tests/test_dataset_runtime.py",
-      "sha256": "2d986e98d79f0a1e83a2a60a9ab99693690efe99d3f212105a54271d35978ace",
-      "bytes": 5480
-    },
-    {
       "file": "tests/test_foundation_science.py",
       "source": "tests/test_foundation_science.py",
       "sha256": "02a65c769f50133161e4644feaffeea6a8e7a88cefd44fc6aa0d0e777bc64667",
@@ -1121,8 +1049,8 @@
     {
       "file": "tests/test_research_evidence.py",
       "source": "tests/test_research_evidence.py",
-      "sha256": "0c4526a2db6190fa909fe65a58e443d2159c73092257b57256e2c455c755ed33",
-      "bytes": 7860
+      "sha256": "7fc86e0bc2214e24f4604823c565478224f002f2af5d0e051e1db28fe73708f1",
+      "bytes": 8105
     },
     {
       "file": "tests/test_result_views.py",

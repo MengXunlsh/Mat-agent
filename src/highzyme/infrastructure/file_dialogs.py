@@ -6,7 +6,6 @@ import subprocess
 def choose_file(kind):
     title, filters = {
         'key': ('SSH private key', 'Key files|*.pem;*.key;*.txt;*|All files|*'),
-        'dataset': ('Nanozyme dataset registry', 'Dataset registry|database_registry.json;*.json'),
     }[kind]
     if os.name == 'nt':
         script = ("[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false); "
@@ -22,6 +21,6 @@ def choose_file(kind):
     root = tkinter.Tk()
     root.withdraw()
     try:
-        return {'file': askopenfilename(title=title, filetypes=[('JSON', '*.json')] if kind == 'dataset' else [('All files', '*')])}
+        return {'file': askopenfilename(title=title, filetypes=[('All files', '*')])}
     finally:
         root.destroy()

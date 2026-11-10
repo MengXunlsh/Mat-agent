@@ -68,7 +68,6 @@
 .hz-result-overview pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;padding:12px;background:var(--surface-secondary,#f6f8fb);border-radius:8px}
 .hz-file-role{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--border-color,#eef1f5)}
 .hz-file-role strong{width:100%;font-size:12px;font-weight:500;color:var(--text-secondary,#64748b)}
-.hz-dataset{display:flex;flex-direction:column;gap:16px;min-width:0}.hz-dataset-search{display:flex;align-items:center;gap:8px;margin-bottom:12px}.hz-dataset-search>input{flex:1;min-width:0}.hz-dataset-dialog.hz-dataset-dialog{width:min(940px,90vw);max-height:90vh}.hz-dataset-dialog .hz-modal-content{max-height:75vh;overflow:auto}.hz-dataset-record a{overflow-wrap:anywhere;color:var(--hz-accent,#2563eb)}.hz-dataset .hz-result-table td,.hz-dataset-record .hz-result-table td{max-width:300px;overflow-wrap:anywhere}.hz-main-tabs{flex-wrap:wrap}
 .hz-result-footer{border-top:1px solid var(--border-color,#e5e9f0);padding-top:12px;justify-content:space-between;margin:0}
 .hz-reaction-equations>div{display:flex;align-items:center;gap:16px;padding:10px 14px;background:var(--surface-secondary,#f6f8fb);border-radius:8px}
 .hz-reaction-equations span{font-size:12px;color:var(--text-secondary,#64748b)}

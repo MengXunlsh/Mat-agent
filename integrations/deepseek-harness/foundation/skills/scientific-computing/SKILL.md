@@ -23,6 +23,6 @@ Show the prepared method, stages, source files, effective scientific parameters 
 
 Use `highzyme_qe_collect` when the job ends. It retains inputs, source hashes, outputs and diagnostics, and publishes the complete result group as one artifact. Inspect saved numerical tables, exported figures and structures. Read or replot saved results without rerunning a completed calculation. Retain failed tasks as failed; change the input and prepare a new task only when a new calculation is needed. Distinguish a small execution example from a converged material result.
 
-Keep results linked to material/structure identity, settings, references, scheduler job and artifact Git version. No external database or material-candidate mode is required by this skill.
+Keep results linked to material/structure identity, settings, references, scheduler job and artifact Git version. Computations can be prepared in any research mode.
 
 When testing a saved case candidate, pass candidate_id and, when needed, validation_question and validation_criterion to the preparation tool. The prepared task and collected artifact retain that proposal version. After collection, evaluate the saved criterion and use highzyme_case_research(action="feedback", candidate_id, job_id, source_artifact_id, outcome, summary); do not interpret a completed task as support by itself.

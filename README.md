@@ -38,8 +38,7 @@ Model and compute connections are configured by the user. Research files stay in
 
 ## Data sources
 
-- **Your research files.** Add CSV, TSV or Excel tables, documents and structure files to a local project and grant the agent access. For example, you can analyse a solar-cell measurement table or inspect a battery material's CIF using the relevant tools. The exact input format depends on the tool.
-- **Optional nanozyme dataset.** The built-in structured dataset browser uses a compatible nanozyme registry and, optionally, its matching material-space resource. For data in other databases, export the relevant records to a project file. The current release has no built-in general SQL or external materials database connector.
+Add CSV, TSV or Excel tables, documents and structure files to a local project and grant the agent access. For example, you can analyse a solar-cell measurement table or inspect a battery material's CIF using the relevant tools. The exact input format depends on the tool.
 
 See the [usage guide](docs/usage-guide.md), [synthetic research examples](examples/general-research/README.md) and [Harness integration](integrations/deepseek-harness/README.md).
 

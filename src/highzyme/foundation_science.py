@@ -12,7 +12,7 @@ import sys
 def run(request):
     action = request['action']
     if action == 'read_dataset_record':
-        from highzyme.dataset_runtime import record_summary
+        from highzyme.evidence.dataset_evidence import record_summary
         record = json.loads(Path(request['file']).read_text(encoding='utf-8-sig'))
         if record.get('schema') != 'highzyme.dataset-record.v1':
             raise ValueError('Select a saved dataset record; use the text view for other files')

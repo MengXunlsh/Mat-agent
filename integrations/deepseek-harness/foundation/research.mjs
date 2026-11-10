@@ -349,7 +349,6 @@ export function parseArtifactDraft(output, messages) {
 /** Additional grants narrow native permissions; they never upgrade the sandbox. */
 export function deniedTool(project, execution, cwd, nativeMode = 'workspace-write') {
   if (execution.name === 'highzyme_case_research' && execution.arguments?.action !== 'read' && nativeMode === 'read-only') return 'This session is read-only.';
-  if (execution.name === 'highzyme_dataset_save' && nativeMode === 'read-only') return 'This session is read-only.';
   const { name, arguments: args = {} } = execution;
   const access = project.access;
   const cleanup = ['interrupt_agent', 'cancel_agent', 'job_kill', 'terminal_close', 'terminal_signal'];

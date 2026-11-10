@@ -8,7 +8,7 @@
 
 运行依赖由 [web-runtime/package-lock.json](web-runtime/package-lock.json) 锁定为 `@deepseek-ai/dsh@0.2.1-rc.2`。上游仓库、标签、源码提交和适配入口见 [upstream.lock.json](upstream.lock.json)。当前程序不需要完整上游源码副本。
 
-`foundation/` 保存 mat-agent 插件、界面、科研身份、内部角色和 16 项内置技能。Harness 提供对话、计划、工具调用、压缩、子 Agent、项目文件、Shell、持久终端、后台任务及原生界面组件。
+`foundation/` 保存 mat-agent 插件、界面、科研身份、内部角色和 15 项内置技能。Harness 提供对话、计划、工具调用、压缩、子 Agent、项目文件、Shell、持久终端、后台任务及原生界面组件。
 
 ## 安装与启动
 
@@ -25,7 +25,7 @@ npm --prefix integrations/deepseek-harness/web-runtime ci
 
 - 主 Agent 使用通用研究身份；文献、分析、核查与成果整理按需使用原生子 Agent。
 - 内置技能由本目录的 `skills/` 加载；用户全局和用户项目技能目录不自动扫描。
-- 项目与案例共用文件、成果、权限、版本与任务机制。数据库和科学计算通过内部工具接入。
+- 项目与案例共用文件、成果、权限、版本与任务机制。内置工具处理项目文件并准备科学计算。
 - 模型和检索连接由用户分别配置，当前会话可单独选择模型，子 Agent 默认继承。
 - 项目记忆通过 Harness MCP 客户端连接本地记忆服务，按项目启用与保存。
 - 文件、文献、代码及整组成果引用读取相应保存版本，预览不重新执行科学计算。

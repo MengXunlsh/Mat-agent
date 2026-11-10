@@ -21,7 +21,7 @@ Check extracted claims against the actual cited passages. Preserve unresolved co
 
 Return a concise answer for focused reading. For reusable structured evidence, read [evidence-schema.md](evidence-schema.md), write a draft JSON with native file tools, then call `highzyme_evidence_save`. It publishes JSON, CSV and a readable report together, with material/assay links, source positions and Git history. Quote matching checks transcription and source location; it does not certify the interpretation or experimental validity.
 
-Use one scalar condition or result per fact where practical. Preserve raw values, units and precision. Reuse the existing output prefix for a revision; read its JSON into a separate draft, revise the relevant facts, and save again. Keep other facts and source identifiers intact. The JSON and report are the reusable project artifacts; do not copy entire conversations or write into the material database.
+Use one scalar condition or result per fact where practical. Preserve raw values, units and precision. Reuse the existing output prefix for a revision; read its JSON into a separate draft, revise the relevant facts, and save again. Keep other facts and source identifiers intact. Save the JSON and report as reusable project artifacts.
 
 Role boundaries:
 - Material: actual sample names, composition, morphology, variants and reported preparation.

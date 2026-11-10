@@ -38,8 +38,7 @@ npm --prefix integrations/deepseek-harness/web-runtime ci
 
 ## 数据来源
 
-- **自己的科研文件。** 把 CSV、TSV、Excel 表格、文档和结构文件放入本地项目并授权读取。例如，可以分析太阳电池的测量表，也可以预览电池材料的 CIF 结构。具体输入要求以所用工具为准。
-- **可选的纳米酶数据集。** 内置结构化数据浏览器支持兼容的纳米酶数据注册表，也可加载与其匹配的材料空间资源。其他数据库的记录可以导出为项目文件使用。当前版本没有内置通用 SQL 或外部材料数据库连接器。
+把 CSV、TSV、Excel 表格、文档和结构文件放入本地项目并授权读取。例如，可以分析太阳电池的测量表，也可以预览电池材料的 CIF 结构。具体输入要求以所用工具为准。
 
 更多内容见[使用指南](docs/usage-guide.zh-CN.md)、[合成数据示例](examples/general-research/README.zh-CN.md)和 [Harness 集成](integrations/deepseek-harness/README.zh-CN.md)。
 

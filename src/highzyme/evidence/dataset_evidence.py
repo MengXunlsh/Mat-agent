@@ -46,3 +46,12 @@ def comparison_evidence(record, source_file):
             'materials': [{'id': mid, 'name': selection['material_name'], 'version': selection.get('version_id') or ''}],
             'assays': [{'id': aid, 'material_id': mid, 'label': selection['material_name'] + ' · ' + aid}],
             'facts': facts, 'coverage': record.get('coverage', {})}
+
+
+def record_summary(record):
+    """Keep every selected value; verbose lineage remains available on demand."""
+    omitted = {'trace', 'sources_resolved', 'material_id', 'version_id', 'record_id', 'assay_id'}
+    return {**record, 'detail': 'values',
+            'observations': [{k: v for k, v in observation.items() if k not in omitted}
+                             for observation in record['observations']],
+            'provenance_detail': 'Use detail=full, optionally with fields, for original quotes and lineage. Saved source artifacts retain the complete record.'}

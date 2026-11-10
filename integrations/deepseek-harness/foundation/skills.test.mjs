@@ -16,7 +16,7 @@ test('native Harness discovers and loads the bundled research capabilities', asy
   try {
     const options = { cwd: process.cwd(), signal: abort.signal };
     const candidates = await provider.list(options);
-    assert.deepEqual(candidates.map(c => c.name).sort(), ['application-exploration', 'assay-comparison', 'compute-resource-setup', 'discussion-artifact', 'formulation-calculations', 'image-colorimetry', 'initial-rate-kinetics', 'literature-evidence', 'material-design', 'material-structure-check', 'nanozyme-dataset', 'publication-retrieval', 'reaction-simulation', 'scientific-computing', 'scientific-plotting', 'signal-analysis']);
+    assert.deepEqual(candidates.map(c => c.name).sort(), ['application-exploration', 'assay-comparison', 'compute-resource-setup', 'discussion-artifact', 'formulation-calculations', 'image-colorimetry', 'initial-rate-kinetics', 'literature-evidence', 'material-design', 'material-structure-check', 'publication-retrieval', 'reaction-simulation', 'scientific-computing', 'scientific-plotting', 'signal-analysis']);
     const comparison = await provider.get(candidates.find(c => c.name === 'assay-comparison'), options);
     assert.match(comparison.content, /highzyme_compare_evidence/);
     assert.equal(comparison.source, 'bundled');

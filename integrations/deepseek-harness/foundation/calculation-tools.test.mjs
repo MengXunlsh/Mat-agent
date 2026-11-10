@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { ResearchProject, deniedTool, git } from './research.mjs';
 import { registerCalculationTools } from './calculation-tools.mjs';
 import { registerDocumentTools } from './document-tools.mjs';
+import { science } from './science.mjs';
 
 const runtime = createRequire(new URL('../web-runtime/package.json', import.meta.url));
 const { defineTool } = await import(pathToFileURL(runtime.resolve('@deepseek-ai/dsh-tools')).href);
@@ -58,4 +59,8 @@ test('native tool definitions execute calibration and preserve project/case file
     p.operations.network = false;
     await assert.rejects(tools.get('highzyme_retrieve_publication')({ source: '10.1038/s41586-019-1335-8' }, exec), /network access/);
   } finally { await fs.rm(root, { recursive: true, force: true }); }
+});
+
+test('scientific operation errors preserve the actionable message', async () => {
+  await assert.rejects(science({ action: 'identity', formula: 'not-a-formula' }), /formula|element|token|character|syntax/i);
 });

@@ -83,6 +83,9 @@ class EvidenceTests(unittest.TestCase):
                 'selection': {'material_id': f'm{index}', 'assay_id': f'a{index}', 'material_name': 'Fe3O4', 'data_sha256': 'a'*64},
                 'observations': [{'field': 'reaction_conditions.activity', 'value': 'POD', 'source': []}], 'coverage': {'truncated': truncated}}), encoding='utf-8')
             files.append({'file': str(file), 'assay_ids': [f'a{index}']})
+        compact = run({'action': 'read_dataset_record', 'file': files[0]['file'], 'fields': ['reaction_conditions']})
+        self.assertEqual(compact['observations'][0]['value'], 'POD')
+        self.assertTrue(compact['coverage']['truncated'])
         result = run({'action': 'compare_evidence', 'selections': files, 'fields': ['km'],
                       'output_prefix': str(self.root/'snapshot-compare'), 'language': 'zh'})
         self.assertEqual(result['pairs'][0]['fields'][0]['state'], 'not_read')

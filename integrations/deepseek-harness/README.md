@@ -8,7 +8,7 @@ English · [简体中文](README.zh-CN.md)
 
 [web-runtime/package-lock.json](web-runtime/package-lock.json) pins `@deepseek-ai/dsh@0.2.1-rc.2`. [upstream.lock.json](upstream.lock.json) records its repository, tag, source commit and adapter entry. A complete upstream source checkout is not needed to run this application.
 
-`foundation/` contains the mat-agent plugin, interface, research identity, internal roles and 16 built-in skills. Harness supplies conversation, planning, tool calls, compression, subagents, project files, Shell, persistent terminals, background tasks and native interface components.
+`foundation/` contains the mat-agent plugin, interface, research identity, internal roles and 15 built-in skills. Harness supplies conversation, planning, tool calls, compression, subagents, project files, Shell, persistent terminals, background tasks and native interface components.
 
 ## Install and launch
 
@@ -25,7 +25,7 @@ At launch, `scripts/prepare_harness_web.py`, `scripts/harness_ui_extensions.py` 
 
 - General research is the main identity. Literature, analysis, verification and artifact synthesis use native subagents as needed.
 - Skills load from `foundation/skills/`. User-global and project skill folders are not scanned automatically.
-- Projects and cases share files, artifacts, permissions, versions and tasks. Internal tools connect the database and scientific computations.
+- Projects and cases share files, artifacts, permissions, versions and tasks. Built-in tools process project files and prepare scientific computations.
 - Users configure models and search separately. Conversations select their own models; subagents inherit by default.
 - Project memory connects a local memory service through Harness's MCP client and is enabled per project.
 - Files, literature, code and artifact groups are read at their saved reference version. Previews do not rerun computations.
